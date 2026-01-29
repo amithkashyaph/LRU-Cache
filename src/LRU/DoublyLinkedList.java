@@ -19,4 +19,14 @@ public class DoublyLinkedList<K, V> {
         head.next = node;
     }
 
+    public Node<K, V> removeLast() {
+        Node<K, V> node = tail.prev;
+        node.prev.next = tail;
+        tail.prev = node.prev;
+
+        node.prev = null;
+        node.next = null;
+
+        return node;
+    }
 }
