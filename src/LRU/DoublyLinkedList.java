@@ -12,4 +12,11 @@ public class DoublyLinkedList<K, V> {
         this.tail.prev = this.head;
     }
 
+    public void addFront(Node<K, V> node) {
+        node.prev = head;
+        node.next = head.next;
+        head.next.prev = node;
+        head.next = node;
+    }
+
 }
