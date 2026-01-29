@@ -29,4 +29,12 @@ public class DoublyLinkedList<K, V> {
 
         return node;
     }
+
+    public void removeAndMoveToFront(Node<K, V> node) {
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+
+        addFront(node);
+    }
+
 }
