@@ -37,4 +37,13 @@ public class DoublyLinkedList<K, V> {
         addFront(node);
     }
 
+    public void printList() {
+        Node<K, V> node = head.next;
+        while(node.next != null) {
+            System.out.print(node.getValue() + " --> ");
+            node = node.next;
+        }
+        System.out.println();
+
+    }
 }
